@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:u="http://java.sun.com/jsf/composite/utkast">
+ 
+    <h:head>
+        <title>Tableless Radiobuttons</title>
+        <h:outputStylesheet library="css" name="styles.css"  />
+    </h:head>
+    
+    <h:body>
+    	<h1>Tableless Radiobuttons</h1>
+    	<h:form id="rootform">
+    		<p>Choose a color:</p>
+	    	<u:radioGroup 
+	    		id="ducks"
+	    		value="#{testBean.selectedValue}"
+				entries="#{testBean.entries}">
+			</u:radioGroup>
+			<h:commandButton value="Submit">
+				<f:ajax execute="ducks" render="selectedValue" />
+			</h:commandButton>
+			<p><h:outputText id="selectedValue" value="#{testBean.selectedValue eq null ? '' : 'you have choosen: '}#{testBean.selectedValue}" /></p>
+    	</h:form>
+    </h:body>
+</html>
