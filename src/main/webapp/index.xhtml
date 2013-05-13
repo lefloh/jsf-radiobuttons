@@ -17,8 +17,7 @@
 	    	<u:radioGroup 
 	    		id="ducks"
 	    		value="#{testBean.selectedValue}"
-				entries="#{testBean.entries}">
-			</u:radioGroup>
+				entries="#{testBean.entries}" />
 			<h:commandButton value="Submit">
 				<f:ajax execute="ducks" render="selectedValue" />
 			</h:commandButton>
